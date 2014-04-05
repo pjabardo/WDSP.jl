@@ -1,9 +1,9 @@
 
 
-boxcar_win{T<:FloatingPoint}(n, ::Type{T}) = ones(T, n)
-boxcar_win(n) = boxcar_win(n, Float64)
+boxcar{T<:FloatingPoint}(n, ::Type{T}) = ones(T, n)
+boxcar(n) = boxcar(n, Float64)
 
-function bartlett_win{T<:FloatingPoint}(n, ::Type{T})
+function bartlett{T<:FloatingPoint}(n, ::Type{T})
 
     nn = convert(T, n-1)
     o = one(T)
@@ -15,10 +15,10 @@ function bartlett_win{T<:FloatingPoint}(n, ::Type{T})
     return w
     
 end
-bartlett_win(n) = bartlett_win(n, Float64)
+bartlett(n) = bartlett(n, Float64)
 
 
-function welch_win{T<:FloatingPoint}(n, ::Type{T})
+function welch{T<:FloatingPoint}(n, ::Type{T})
 
     nn = convert(T, n)
     o = one(T)
@@ -29,9 +29,9 @@ function welch_win{T<:FloatingPoint}(n, ::Type{T})
     end
     return w
 end
-welch_win(n) = welch_win(n, Float64)
+welch(n) = welch(n, Float64)
 
-function hanning_win{T<:FloatingPoint}(n, ::Type{T})
+function hanning{T<:FloatingPoint}(n, ::Type{T})
 
     nn = convert(T, n)
     o = one(T)
@@ -43,10 +43,10 @@ function hanning_win{T<:FloatingPoint}(n, ::Type{T})
 
     return w
 end
-hanning_win(n) = hanning_win(n, Float64)
+hanning(n) = hanning(n, Float64)
 
 
-function hamming_win{T<:FloatingPoint}(n, ::Type{T})
+function hamming{T<:FloatingPoint}(n, ::Type{T})
 
     nn = convert(T, n)
     o = one(T)
@@ -61,9 +61,9 @@ function hamming_win{T<:FloatingPoint}(n, ::Type{T})
 
     return w
 end
-hamming_win(n) = hamming_win(n, Float64)
+hamming(n) = hamming(n, Float64)
 
-function blackman_win{T<:FloatingPoint}(n, ::Type{T})
+function blackman{T<:FloatingPoint}(n, ::Type{T})
 
     nn = convert(T, n-1)
     o = one(T)
@@ -80,7 +80,7 @@ function blackman_win{T<:FloatingPoint}(n, ::Type{T})
 
     return w
 end
-blackman_win(n) = blackman_win(n, Float64)
+blackman(n) = blackman(n, Float64)
 
 
 
