@@ -82,5 +82,3 @@ function blackman{T<:FloatingPoint}(n, ::Type{T})
 end
 blackman(n) = blackman(n, Float64)
 
-
-
